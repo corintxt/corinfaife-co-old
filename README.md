@@ -1,5 +1,6 @@
-# cf-new
-
+# corinfaife.co
+## Personal website (VUE.JS)
+  
 ## Project setup
 ```
 npm install
