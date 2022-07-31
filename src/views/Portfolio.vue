@@ -38,16 +38,23 @@
 </template>
 
 <script>
-import articlesJSON from "../assets/articles.json"
+// import articlesJSON from "../assets/articles.json"
+// TODO: remove articlesJSON from app files; test with updated GitHub.
 
 export default {
   name: 'Portfolio',
   data () {
     return {
-      articles: articlesJSON.articles
+      articles: {}
     }
+  },
+  created() {
+    fetch('https://raw.githubusercontent.com/corintxt/portfolio/main/articles.json')
+      .then(response => response.json())
+      .then(data => (this.articles = data.articles))
+      }
   }
-}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
